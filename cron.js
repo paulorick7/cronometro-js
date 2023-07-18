@@ -4,9 +4,12 @@ $(document).ready(function () {
     const startButton = $('.start-button');
     const stopButton = $('.stop-button');
     const resetButton = $('.reset-button');
+    const startDiv = $('.start-div');
+    const stopResetDiv = $('.stop-reset-div');
     let tempo = 0;
     let counterActive = false;
     let intervalId;
+    $('.stop-button').hide();
 
 
 
@@ -27,6 +30,8 @@ function add() {
         }, 1000);
 
     }
+    $('.start-button').hide();
+    $('.stop-button, .reset-buttoon').show();
 }
 
 function stop() {
@@ -34,6 +39,10 @@ function stop() {
         counterActive = false;
         clearInterval(intervalId)
     }
+    $('.start-button').show();
+    $('.stop-button').hide();
+
+
 }
 
 function reset() {
